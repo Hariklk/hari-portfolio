@@ -27,13 +27,19 @@ document.addEventListener('DOMContentLoaded', () => {
     function update() {
         const scrolled = window.scrollY;
 
-        // Smooth mouse movement interpolation
-        mouseX += (targetMouseX - mouseX) * 0.1;
-        mouseY += (targetMouseY - mouseY) * 0.1;
-
         // Navbar state
         if (scrolled > 50) nav.classList.add('scrolled');
         else nav.classList.remove('scrolled');
+
+        // Performance check: skip parallax on mobile
+        if (window.innerWidth < 768) {
+            requestAnimationFrame(update);
+            return;
+        }
+
+        // Smooth mouse movement interpolation
+        mouseX += (targetMouseX - mouseX) * 0.1;
+        mouseY += (targetMouseY - mouseY) * 0.1;
 
         // Main Parallax Logic
         parallaxElements.forEach((el, index) => {
