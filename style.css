@@ -1482,9 +1482,12 @@ footer {
         right: -100%;
         width: 85%;
         height: 100vh;
-        background: rgba(8, 8, 8, 0.98);
-        backdrop-filter: blur(30px);
-        -webkit-backdrop-filter: blur(30px);
+        background:
+            radial-gradient(circle at 20% 30%, rgba(0, 242, 254, 0.15), transparent 40%),
+            radial-gradient(circle at 80% 70%, rgba(240, 147, 251, 0.15), transparent 40%),
+            rgba(5, 5, 5, 0.98);
+        backdrop-filter: blur(40px);
+        -webkit-backdrop-filter: blur(40px);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1492,7 +1495,34 @@ footer {
         gap: 2.5rem;
         transition: var(--transition-smooth);
         z-index: 10000;
-        border-left: 1px solid rgba(255, 255, 255, 0.05);
+        border-left: 1px solid rgba(0, 242, 254, 0.2);
+        overflow: hidden;
+    }
+
+    .nav-links::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image:
+            radial-gradient(1.5px 1.5px at 20px 30px, #fff, transparent),
+            radial-gradient(1px 1px at 100px 150px, #fff, transparent),
+            radial-gradient(1.5px 1.5px at 200px 300px, #fff, transparent),
+            radial-gradient(2px 2px at 400px 50px, #fff, transparent),
+            radial-gradient(1.5px 1.5px at 300px 400px, #fff, transparent);
+        background-size: 300px 400px;
+        opacity: 0.3;
+        z-index: -1;
+        animation: mobileSpaceScroll 20s linear infinite;
+    }
+
+    @keyframes mobileSpaceScroll {
+        from {
+            background-position: 0 0;
+        }
+
+        to {
+            background-position: 0 400px;
+        }
     }
 
     .menu-toggle {
