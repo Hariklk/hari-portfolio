@@ -1495,8 +1495,29 @@ footer {
         border-left: 1px solid rgba(255, 255, 255, 0.05);
     }
 
+    .menu-toggle {
+        display: block;
+        z-index: 10001;
+        /* Above nav-links background but within nav */
+        color: var(--text-main);
+    }
+
+    .menu-toggle i {
+        width: 30px;
+        height: 30px;
+        display: block;
+    }
+
     .nav-links.active {
         right: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+        color: var(--text-main);
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
     }
 
     .glass {
