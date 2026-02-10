@@ -798,6 +798,13 @@ nav.scrolled {
     transform: translateY(-10px);
 }
 
+.project-img {
+    height: 280px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
 #img-medical {
     background:
         radial-gradient(circle at 20% 30%, rgba(0, 242, 254, 0.4), transparent 50%),
@@ -1331,6 +1338,17 @@ footer {
 }
 
 /* Responsive */
+/* Responsive Design System */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 900px;
+    }
+
+    .hero h1 {
+        font-size: clamp(3rem, 10vw, 5rem);
+    }
+}
+
 @media (max-width: 768px) {
     .nav-links {
         position: fixed;
@@ -1338,14 +1356,14 @@ footer {
         right: -100%;
         width: 80%;
         height: 100vh;
-        background: rgba(10, 10, 10, 0.95);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 2rem;
+        gap: 2.5rem;
         transition: var(--transition-smooth);
         z-index: 9999;
         border-left: 1px solid rgba(255, 255, 255, 0.1);
@@ -1356,7 +1374,8 @@ footer {
     }
 
     .nav-links a {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        letter-spacing: 2px;
     }
 
     .menu-toggle {
@@ -1364,94 +1383,176 @@ footer {
         z-index: 10001;
     }
 
+    .glass {
+        padding: 1.8rem;
+    }
+
     .about-content {
         grid-template-columns: 1fr;
     }
 
     .hero {
-        padding-top: 100px;
-        gap: 2rem;
-    }
-
-    .hero h1 {
-        font-size: 3.5rem;
-        letter-spacing: 4px;
-    }
-
-    .hero p {
-        font-size: 1rem;
-        padding: 0 1rem;
+        padding-top: 120px;
+        gap: 2.5rem;
     }
 
     .cta-btns {
         flex-direction: column;
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
+        margin: 0 auto;
     }
 
     .section-title h2 {
         font-size: 2.2rem;
     }
 
-    .footer-info h2 {
-        font-size: 2rem;
-    }
-
-    .modal-content {
-        padding: 2rem 1.5rem;
-        width: 95%;
-    }
-
-    .detail-section h3 {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2.8rem;
-    }
-
-    .profile-container {
-        width: 220px;
-        height: 220px;
-    }
-
-    .section {
-        padding: 5rem 0;
-    }
-
-    .container {
-        padding: 0 1.5rem;
-    }
-
-    .glass {
-        padding: 1.5rem;
-        border-radius: 24px;
-    }
-
     .skills-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 
     .projects-grid {
         grid-template-columns: 1fr;
     }
 
-    .other-grid {
-        grid-template-columns: 1fr;
+    .project-img {
+        height: 220px;
     }
 
-    .certs-list {
-        grid-template-columns: 1fr;
+    .modal-content {
+        padding: 2.5rem 1.5rem;
+        width: 95%;
+    }
+
+    .robot-container {
+        display: none;
+    }
+
+    .floating-shape,
+    .stars,
+    .parallax {
+        transition: transform 0.3s ease-out !important;
+        /* snappier on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 5rem 0;
+    }
+
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    .glass {
+        padding: 1.25rem;
+        border-radius: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+        letter-spacing: 2px;
+    }
+
+    .profile-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Card Specific Optimizations */
+    .icon-box {
+        width: 50px;
+        height: 50px;
+        border-radius: 14px;
+        margin-bottom: 1rem;
+    }
+
+    .skill-category h3 {
+        font-size: 1.1rem;
+    }
+
+    .project-info {
+        padding: 1.25rem;
+    }
+
+    .project-info h3 {
+        font-size: 1.25rem;
+    }
+
+    .tags span {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.7rem;
+    }
+
+    .other-card {
+        padding: 1.5rem;
+        min-height: 220px;
+    }
+
+    .other-card h4 {
+        font-size: 1.2rem;
+    }
+
+    .cert-item {
+        padding: 1.2rem;
+        gap: 1rem;
+    }
+
+    .cert-item span {
+        font-size: 0.9rem;
     }
 
     .timeline {
-        padding-left: 1.5rem;
+        padding-left: 1.25rem;
     }
 
     .timeline-item::before {
-        left: -1.85rem;
+        left: -1.65rem;
+        top: 1.8rem;
+    }
+
+    .book-page {
+        padding: 1.5rem;
+    }
+
+    .about-text h3,
+    .education h3 {
+        font-size: 1.2rem;
+        gap: 8px;
+    }
+
+    .cert-modal-content {
+        padding: 1.5rem 1rem;
+    }
+
+    .cert-modal-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .footer-info h2 {
+        font-size: 1.75rem;
+    }
+
+    .social-links {
+        gap: 1rem;
+    }
+
+    .social-links a {
+        width: 45px;
+        height: 45px;
     }
 }
 
@@ -1474,7 +1575,6 @@ footer {
     opacity: 0.6;
     animation: robotFloat2 30s ease-in-out infinite;
     filter: hue-rotate(180deg) brightness(1.2);
-    /* Gives it a different color theme */
 }
 
 .robot {
@@ -1664,14 +1764,6 @@ footer {
     }
 }
 
-.phone-number {
-    margin-top: 1.5rem;
-    font-size: 1.1rem;
-    color: var(--text-dim);
-    font-weight: 500;
-    letter-spacing: 1px;
-}
-
 /* Certification Modal Styles */
 .clickable-cert {
     cursor: pointer;
@@ -1741,34 +1833,10 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
-    .cert-modal-content {
-        padding: 2rem 1rem;
-        width: 95%;
-    }
-
-    .cert-modal-content h3 {
-        font-size: 1.2rem;
-    }
-
-    .robot-container {
-        display: none;
-        /* Hide robots on mobile to avoid clutter and overflow */
-    }
-
-    .book-page {
-        padding: 2.5rem 1.5rem;
-    }
-
-    .about-text h3,
-    .education h3 {
-        font-size: 1.3rem;
-    }
-
-    /* Disable complex parallax translations on mobile for better performance */
-    .floating-shape,
-    .stars,
-    .parallax {
-        transition: transform 0.5s ease !important;
-    }
+.phone-number {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    font-weight: 500;
+    letter-spacing: 1px;
 }
