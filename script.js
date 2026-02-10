@@ -82,27 +82,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Mobile Menu
     const menuToggle = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
+    const menuIcon = menuToggle.querySelector('i');
 
     if (menuToggle) {
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            // Add styles for mobile menu active state in next CSS update if needed
-            // For now, simple toggle
+
+            // Toggle icon between menu and x
             if (navLinks.classList.contains('active')) {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.background = 'rgba(0,0,0,0.9)';
-                navLinks.style.padding = '2rem';
-                navLinks.style.backdropFilter = 'blur(10px)';
+                menuIcon.setAttribute('data-lucide', 'x');
             } else {
-                navLinks.style.display = 'none';
+                menuIcon.setAttribute('data-lucide', 'menu');
             }
+            lucide.createIcons();
         });
     }
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuIcon.setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
+        });
+    });
 
     // 5. Smooth Anchor Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
