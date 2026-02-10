@@ -180,6 +180,13 @@ h4,
     transition: transform 2.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.5s ease;
 }
 
+@media (max-width: 480px) {
+    .book-page {
+        padding: 2rem 1.5rem;
+        min-height: auto;
+    }
+}
+
 .left-page {
     border-radius: 30px 0 0 30px;
     border-right: none;
@@ -1326,23 +1333,125 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: var(--transition-smooth);
+        z-index: 9999;
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
     }
 
     .menu-toggle {
         display: block;
+        z-index: 10001;
     }
 
     .about-content {
         grid-template-columns: 1fr;
     }
 
+    .hero {
+        padding-top: 100px;
+        gap: 2rem;
+    }
+
     .hero h1 {
         font-size: 3.5rem;
+        letter-spacing: 4px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .cta-btns {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .section-title h2 {
+        font-size: 2.2rem;
     }
 
     .footer-info h2 {
         font-size: 2rem;
+    }
+
+    .modal-content {
+        padding: 2rem 1.5rem;
+        width: 95%;
+    }
+
+    .detail-section h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .profile-container {
+        width: 220px;
+        height: 220px;
+    }
+
+    .section {
+        padding: 5rem 0;
+    }
+
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    .glass {
+        padding: 1.5rem;
+        border-radius: 24px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .other-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certs-list {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline {
+        padding-left: 1.5rem;
+    }
+
+    .timeline-item::before {
+        left: -1.85rem;
     }
 }
 
@@ -1640,5 +1749,26 @@ footer {
 
     .cert-modal-content h3 {
         font-size: 1.2rem;
+    }
+
+    .robot-container {
+        display: none;
+        /* Hide robots on mobile to avoid clutter and overflow */
+    }
+
+    .book-page {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .about-text h3,
+    .education h3 {
+        font-size: 1.3rem;
+    }
+
+    /* Disable complex parallax translations on mobile for better performance */
+    .floating-shape,
+    .stars,
+    .parallax {
+        transition: transform 0.5s ease !important;
     }
 }
