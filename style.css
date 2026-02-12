@@ -450,6 +450,7 @@ nav.scrolled {
     height: 280px;
     z-index: 5;
     margin-bottom: 1rem;
+    display: block;
 }
 
 .profile-frame {
@@ -504,25 +505,42 @@ nav.scrolled {
 }
 
 .hero h1 {
-    font-size: clamp(4rem, 12vw, 8rem);
+    font-size: clamp(4rem, 12vw, 7.5rem);
     font-weight: 900;
-    letter-spacing: 8px;
+    letter-spacing: 15px;
     margin-bottom: 0.5rem;
     text-transform: uppercase;
-    background: linear-gradient(135deg, #fff 0%, var(--primary) 50%, #fff 100%);
+    background: linear-gradient(135deg,
+            #ffffff 20%,
+            var(--primary) 40%,
+            var(--secondary) 60%,
+            #ffffff 80%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 20px rgba(0, 242, 254, 0.2));
-    animation: shine 5s linear infinite;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+    animation: professionalShine 10s linear infinite;
+    transition: var(--transition-smooth);
+    position: relative;
 }
 
-@keyframes shine {
-    to {
+.hero h1:hover {
+    letter-spacing: 20px;
+    filter: drop-shadow(0 0 25px rgba(0, 242, 254, 0.4));
+}
+
+@keyframes professionalShine {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
         background-position: 200% center;
     }
 }
+
+
 
 .profile-frame::after {
     content: '';
@@ -1691,7 +1709,6 @@ footer {
     height: 300px;
     z-index: 1;
     pointer-events: none;
-    animation: robotFloat 24s ease-in-out infinite;
 }
 
 .robot-2 {
@@ -1699,7 +1716,6 @@ footer {
     left: 5%;
     transform: scale(0.65);
     opacity: 0.6;
-    animation: robotFloat2 30s ease-in-out infinite;
     filter: hue-rotate(180deg) brightness(1.2);
 }
 
@@ -1707,6 +1723,11 @@ footer {
     position: relative;
     width: 100px;
     margin: 0 auto;
+    animation: robotFloat 24s ease-in-out infinite;
+}
+
+.robot-2 .robot {
+    animation: robotFloat2 30s ease-in-out infinite;
 }
 
 .robot-head {
