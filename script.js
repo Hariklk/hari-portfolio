@@ -128,5 +128,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
 
+    // 6. Profile Robot Interaction
+    const profileClickArea = document.getElementById('profileClickArea');
+    const profileRobot = document.getElementById('profileRobot');
+
+    if (profileClickArea && profileRobot) {
+        // Auto-greeting on page load
+        setTimeout(() => {
+            profileRobot.classList.add('active');
+            setTimeout(() => {
+                profileRobot.classList.remove('active');
+            }, 5000);
+        }, 1500);
+
+        profileClickArea.addEventListener('click', (e) => {
+            profileRobot.classList.toggle('active');
+
+            // Optional: Hide after some time
+            if (profileRobot.classList.contains('active')) {
+                setTimeout(() => {
+                    profileRobot.classList.remove('active');
+                }, 5000);
+            }
+        });
+    }
+});
