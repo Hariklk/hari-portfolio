@@ -94,15 +94,30 @@
     <main>
         <!-- Home / Hero Section -->
         <section id="home" class="hero">
-            <div class="profile-container parallax" data-speed="0.1" data-scale="1.05">
-                <div class="profile-frame">
-                    <img src="WhatsApp Image 2026-02-09 at 9.41.55 PM.jpeg" alt="HARIHARAN" class="profile-img">
-                    <div class="frame-glow"></div>
+            <div class="profile-wrapper">
+                <div class="profile-robot" id="profileRobot">
+                    <div class="robot-head">
+                        <div class="robot-eye left"></div>
+                        <div class="robot-eye right"></div>
+                        <div class="robot-scanner"></div>
+                    </div>
+                    <div class="robot-body">
+                        <div class="robot-core"></div>
+                    </div>
+                    <div class="robot-arm left"></div>
+                    <div class="robot-arm right"></div>
+                    <div class="speech-bubble">Hii! 👋</div>
+                </div>
+                <div class="profile-container parallax" data-speed="0.1" data-scale="1.05" id="profileClickArea">
+                    <div class="profile-frame">
+                        <img src="WhatsApp Image 2026-02-09 at 9.41.55 PM.jpeg" alt="HARIHARAN" class="profile-img">
+                        <div class="frame-glow"></div>
+                    </div>
                 </div>
             </div>
             <div class="content parallax" data-speed="0.4" data-scale="1.1">
                 <h2 class="reveal">Hello, I'm</h2>
-                <h1 class="reveal delay-1">HARIHARAN</h1>
+                <h1 class="reveal delay-1 name-reveal">HARIHARAN</h1>
                 <h3 class="reveal delay-1 subtitle">AI & Data Science <span class="gradient-text">Fresher</span></h3>
                 <p class="reveal delay-2">AI/DS fresher with hands-on experience in Python, SQL, Power BI, and Machine
                     Learning, gained through internships and real-world projects.</p>
@@ -337,32 +352,32 @@
                 </div>
                 <div class="certs-list">
                     <div class="cert-item glass reveal clickable-cert"
-                        onclick="openCertModal('cert_oracle.png', 'Oracle Cloud Infrastructure – Foundations')">
+                        onclick="openCertModal('img/cert_oracle.png', 'Oracle Cloud Infrastructure – Foundations')">
                         <i data-lucide="award"></i>
                         <span>Oracle Cloud Infrastructure – Foundations</span>
                     </div>
                     <div class="cert-item glass reveal clickable-cert"
-                        onclick="openCertModal('cert_google.png', 'Google Data Analytics – Foundations')">
+                        onclick="openCertModal('img/cert_google.png', 'Google Data Analytics – Foundations')">
                         <i data-lucide="award"></i>
                         <span>Google Data Analytics – Foundations</span>
                     </div>
                     <div class="cert-item glass reveal clickable-cert"
-                        onclick="openCertModal('cert_ibm.png', 'IBM Machine Learning Certification')">
+                        onclick="openCertModal('img/cert_ibm.png', 'IBM Machine Learning Certification')">
                         <i data-lucide="award"></i>
                         <span>IBM Machine Learning Certification</span>
                     </div>
                     <div class="cert-item glass reveal clickable-cert"
-                        onclick="openCertModal('cert_excel.png', 'Business Analytics with Excel')">
+                        onclick="openCertModal('img/cert_excel.png', 'Business Analytics with Excel')">
                         <i data-lucide="award"></i>
                         <span>Business Analytics with Excel</span>
                     </div>
                     <div class="cert-item glass reveal clickable-cert"
-                        onclick="openCertModal('cert_devops.png', 'DevOps – Infosys Springboard')">
+                        onclick="openCertModal('img/cert_devops.png', 'DevOps – Infosys Springboard')">
                         <i data-lucide="award"></i>
                         <span>DevOps – Infosys Springboard</span>
                     </div>
                     <div class="cert-item glass reveal clickable-cert"
-                        onclick="openCertModal('cert_office.png', 'Microsoft Office Essentials')">
+                        onclick="openCertModal('img/cert_office.png', 'Microsoft Office Essentials')">
                         <i data-lucide="award"></i>
                         <span>Microsoft Office Essentials</span>
                     </div>
@@ -562,6 +577,3 @@
 </body>
 
 </html>
-
-
-
