@@ -1698,7 +1698,10 @@ footer {
         transform: none !important;
         border-radius: 16px !important;
         padding: 1.5rem;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.4),
+            inset 0 0 20px rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
     }
 
     .book-page.left-page {
@@ -1765,10 +1768,24 @@ footer {
         letter-spacing: 1px;
     }
 
-    .profile-container {
+    .profile-wrapper {
         width: 180px;
         height: 180px;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .profile-robot.active {
+        top: -35px;
+        /* Adjust for smaller mobile profile */
+        transform: translate(-50%, 0) scale(0.65);
+    }
+
+    .speech-bubble {
+        right: -60px;
+        /* Keep on screen */
+        top: -20px;
+        padding: 5px 12px;
+        font-size: 0.7rem;
     }
 
     .hero p {
@@ -1786,6 +1803,15 @@ footer {
 
     .skill-category {
         padding: 1.25rem;
+    }
+
+    .cert-modal-content {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    .cert-modal-content h3 {
+        font-size: 1.2rem;
     }
 
     .other-grid {
@@ -1806,6 +1832,30 @@ footer {
     .mini-project-icon {
         width: 2.5rem;
         height: 2.5rem;
+    }
+
+    .robot-container {
+        transform: scale(0.5);
+        opacity: 0.3;
+    }
+
+    .robot-2 {
+        transform: scale(0.4);
+        opacity: 0.2;
+    }
+
+    .social-links {
+        gap: 1.25rem;
+        margin-top: 2rem;
+    }
+
+    .social-links a {
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo {
+        font-size: 1.6rem;
     }
 }
 
@@ -2096,3 +2146,4 @@ footer {
     font-weight: 500;
     letter-spacing: 1px;
 }
+
