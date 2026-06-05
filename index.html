@@ -276,6 +276,8 @@
                             <div class="tags">
                                 <span>Python</span><span>SHAP</span><span>LIME</span><span>MLOps</span>
                             </div>
+                            <a href="https://medicalhealth-diagnostics-xai-7ug6.onrender.com/medical.html" target="_blank" class="project-link live-link">Live Demo <i
+                                    data-lucide="external-link"></i></a>
                             <a href="javascript:void(0)" class="project-link"
                                 onclick="openProjectModal('medical-xai')">View Details <i
                                     data-lucide="arrow-up-right"></i></a>
@@ -352,32 +354,32 @@
                 </div>
                 <div class="certs-list">
                     <div class="cert-item glass reveal clickable-cert"
-                        onclick="openCertModal('cert_oracle.png', 'Oracle Cloud Infrastructure – Foundations')">
+                        onclick="openCertModal('img/cert_oracle.png', 'Oracle Cloud Infrastructure – Foundations')">
                         <i data-lucide="award"></i>
                         <span>Oracle Cloud Infrastructure – Foundations</span>
                     </div>
                     <div class="cert-item glass reveal clickable-cert"
-                        onclick="openCertModal('cert_google.png', 'Google Data Analytics – Foundations')">
+                        onclick="openCertModal('img/cert_google.png', 'Google Data Analytics – Foundations')">
                         <i data-lucide="award"></i>
                         <span>Google Data Analytics – Foundations</span>
                     </div>
                     <div class="cert-item glass reveal clickable-cert"
-                        onclick="openCertModal('cert_ibm.png', 'IBM Machine Learning Certification')">
+                        onclick="openCertModal('img/cert_ibm.png', 'IBM Machine Learning Certification')">
                         <i data-lucide="award"></i>
                         <span>IBM Machine Learning Certification</span>
                     </div>
                     <div class="cert-item glass reveal clickable-cert"
-                        onclick="openCertModal('cert_excel.png', 'Business Analytics with Excel')">
+                        onclick="openCertModal('img/cert_excel.png', 'Business Analytics with Excel')">
                         <i data-lucide="award"></i>
                         <span>Business Analytics with Excel</span>
                     </div>
                     <div class="cert-item glass reveal clickable-cert"
-                        onclick="openCertModal('cert_devops.png', 'DevOps – Infosys Springboard')">
+                        onclick="openCertModal('img/cert_devops.png', 'DevOps – Infosys Springboard')">
                         <i data-lucide="award"></i>
                         <span>DevOps – Infosys Springboard</span>
                     </div>
                     <div class="cert-item glass reveal clickable-cert"
-                        onclick="openCertModal('cert_office.png', 'Microsoft Office Essentials')">
+                        onclick="openCertModal('img/cert_office.png', 'Microsoft Office Essentials')">
                         <i data-lucide="award"></i>
                         <span>Microsoft Office Essentials</span>
                     </div>
@@ -439,7 +441,9 @@
                 dataset: 'Medical imaging dataset (X-ray / scan images) with labeled data for disease classification. Preprocessing includes resizing, normalization, noise reduction, and augmentation.',
                 workflow: 'Collected and preprocessed medical images using image processing techniques. Applied image enhancement, normalization, and augmentation. Trained CNN-based models for disease classification. Integrated structured patient data with image-based predictions. Applied XAI techniques (SHAP, LIME) to explain model decisions.',
                 models: 'Convolutional Neural Networks (CNN), Logistic Regression, and Random Forest. Hybrid approach combining image-based and tabular predictions.',
-                metrics: 'Accuracy, Precision, Recall (priority for medical safety), and F1-score.'
+                metrics: 'Accuracy, Precision, Recall (priority for medical safety), and F1-score.',
+                liveLink: 'https://medicalhealth-diagnostics-xai-7ug6.onrender.com/medical.html',
+                warning: 'Due to GPU limitations on the free hosting tier, the AI model may occasionally crash or respond slowly. Please retry after a moment if this occurs.'
             }
         };
 
@@ -468,6 +472,26 @@
                 githubContainer.style.display = 'block';
             } else {
                 githubContainer.style.display = 'none';
+            }
+
+            // Live Link
+            const liveLinkContainer = document.getElementById('modal-livelink-container');
+            const liveLinkAnchor = document.getElementById('modal-livelink');
+            if (data.liveLink) {
+                liveLinkAnchor.setAttribute('href', data.liveLink);
+                liveLinkContainer.style.display = 'block';
+            } else {
+                liveLinkContainer.style.display = 'none';
+            }
+
+            // Warning
+            const warningContainer = document.getElementById('modal-warning-container');
+            const warningText = document.getElementById('modal-warning');
+            if (data.warning) {
+                warningText.innerText = data.warning;
+                warningContainer.style.display = 'block';
+            } else {
+                warningContainer.style.display = 'none';
             }
 
             const helpers = {
@@ -563,6 +587,16 @@
                     <h3><i data-lucide="trending-up"></i> Evaluation Metrics</h3>
                     <p id="modal-metrics"></p>
                 </div>
+                <div id="modal-livelink-container" class="detail-section" style="display: none;">
+                    <h3><i data-lucide="globe"></i> Live Demo</h3>
+                    <a id="modal-livelink" href="#" target="_blank" class="project-link live-link">
+                        Open Live Demo <i data-lucide="external-link"></i>
+                    </a>
+                </div>
+                <div id="modal-warning-container" class="detail-section warning-section" style="display: none;">
+                    <h3><i data-lucide="alert-triangle"></i> Note</h3>
+                    <p id="modal-warning" class="warning-text"></p>
+                </div>
                 <div id="modal-github-container" class="detail-section" style="display: none;">
                     <h3><i data-lucide="github"></i> Code Repository</h3>
                     <a id="modal-github"
@@ -577,4 +611,3 @@
 </body>
 
 </html>
-
