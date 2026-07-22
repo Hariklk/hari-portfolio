@@ -317,6 +317,24 @@
                                     data-lucide="arrow-up-right"></i></a>
                         </div>
                     </div>
+                    <!-- Project 4 -->
+                    <div class="project-card glass reveal delay-3 parallax" data-speed="0.1">
+                        <div class="project-img" id="img-air">
+                            <i data-lucide="wind" class="project-main-icon"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>India Air Quality Intelligence Dashboard</h3>
+                            <p>An interactive dashboard for analyzing and visualizing air quality metrics across India.</p>
+                            <div class="tags">
+                                <span>Data Analytics</span><span>Dashboard</span>
+                            </div>
+                            <a href="https://air-pollution-analytics-dashboard.vercel.app/" target="_blank" class="project-link live-link">Live Demo <i
+                                    data-lucide="external-link"></i></a>
+                            <a href="javascript:void(0)" class="project-link"
+                                onclick="openProjectModal('air-quality')">View Details <i
+                                    data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="additional-projects">
@@ -444,6 +462,13 @@
                 metrics: 'Accuracy, Precision, Recall (priority for medical safety), and F1-score.',
                 liveLink: 'https://medicalhealth-diagnostics-xai-7ug6.onrender.com/medical.html',
                 warning: 'Due to GPU limitations on the free hosting tier, the AI model may occasionally crash or respond slowly. Please retry after a moment if this occurs.'
+            },
+            'air-quality': {
+                title: 'India Air Quality Intelligence Dashboard',
+                overview: 'An interactive dashboard providing real-time insights and historical analytics on air pollution and air quality metrics across various regions in India.',
+                problem: 'Monitoring and understanding air quality is crucial for public health, but data is often fragmented or difficult to interpret. This dashboard centralizes the information and presents it through intuitive visualizations.',
+                tech: ['Data Analytics', 'Dashboard', 'Web Technologies'],
+                liveLink: 'https://air-pollution-analytics-dashboard.vercel.app/'
             }
         };
 
